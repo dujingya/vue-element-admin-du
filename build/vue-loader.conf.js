@@ -1,5 +1,12 @@
-'use strict'
+var utils = require('./utils')
+var config = require('../config')
+var isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  //You can set the vue-loader configuration by yourself.
+  loaders: utils.cssLoaders({
+    sourceMap: isProduction
+      ? config.build.productionSourceMap
+      : config.dev.cssSourceMap,
+    extract: isProduction
+  })
 }
