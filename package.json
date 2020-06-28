@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "node build/dev-server.js",
+    "qa": "node build/qa.js",
     "start": "node build/dev-server.js",
     "build": "node build/build.js"
   },
