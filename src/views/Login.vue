@@ -45,8 +45,10 @@
       },
       handleSubmit2(ev) {
         var _this = this;
+        console.log(11111111)
         this.$refs.ruleForm2.validate((valid) => {
           if (valid) {
+            console.log(valid)
             //_this.$router.replace('/table');
             this.logining = true;
             //NProgress.start();
@@ -60,7 +62,11 @@
             //       type: 'error'
             //     });
             //   } else {
-            //     sessionStorage.setItem('user', JSON.stringify(user));
+                let user = {
+                  name: 'admin',
+                  password: 'admin'
+                }
+                sessionStorage.setItem('user', JSON.stringify(user));
                 this.$router.push({ path: '/table' });
             //   }
             // });
